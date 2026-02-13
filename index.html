@@ -25,7 +25,6 @@
             padding: 20px;
         }
 
-        /* شريحة عامة */
         .slide {
             background: white;
             border-radius: 30px;
@@ -44,17 +43,10 @@
         }
 
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* رأس الشريحة */
         .slide-header {
             text-align: center;
             margin-bottom: 30px;
@@ -86,7 +78,6 @@
             color: #7f8c8d;
         }
 
-        /* المحتوى */
         .content-area {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -95,9 +86,7 @@
             margin: 30px 0;
         }
 
-        .visual-side {
-            text-align: center;
-        }
+        .visual-side { text-align: center; }
 
         .text-side {
             font-size: 1.2rem;
@@ -105,7 +94,6 @@
             color: #34495e;
         }
 
-        /* الشخصية */
         .character {
             width: 200px;
             height: 200px;
@@ -125,7 +113,6 @@
             50% { transform: translateY(-20px); }
         }
 
-        /* البطاقات التفاعلية */
         .concept-card {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             border-radius: 20px;
@@ -147,7 +134,6 @@
             margin-bottom: 10px;
         }
 
-        /* الألعاب التفاعلية */
         .game-container {
             background: #f8f9fa;
             border-radius: 20px;
@@ -183,12 +169,6 @@
             transform: scale(1.1) rotate(10deg);
         }
 
-        .number-ball.selected {
-            background: linear-gradient(135deg, #81C784, #4CAF50);
-            transform: scale(1.2);
-        }
-
-        /* خيارات الإجابة */
         .options-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -239,7 +219,6 @@
             75% { transform: translateX(10px); }
         }
 
-        /* شريط التقدم */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -250,7 +229,6 @@
             z-index: 1000;
         }
 
-        /* نقاط الجواهر */
         .gems-counter {
             position: fixed;
             top: 20px;
@@ -259,7 +237,7 @@
             padding: 15px 25px;
             border-radius: 50px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            display: flex;
+            display: none;
             align-items: center;
             gap: 10px;
             font-size: 1.3rem;
@@ -268,7 +246,31 @@
             z-index: 100;
         }
 
-        /* أزرار التنقل */
+        .gems-counter.visible {
+            display: flex;
+        }
+
+        .student-name-display {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #667eea;
+            z-index: 100;
+        }
+
+        .student-name-display.visible {
+            display: flex;
+        }
+
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -303,7 +305,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
-        /* رسالة النجاح */
         .success-message {
             display: none;
             position: fixed;
@@ -330,7 +331,6 @@
             margin-bottom: 20px;
         }
 
-        /* تأثيرات الخلفية */
         .bg-decoration {
             position: absolute;
             opacity: 0.1;
@@ -343,56 +343,11 @@
             font-size: 15rem;
         }
 
-        /* حاسبة تفاعلية */
-        .calculator {
-            background: #2c3e50;
-            border-radius: 20px;
-            padding: 20px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .calc-display {
-            background: #34495e;
-            color: #2ecc71;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            text-align: left;
-            margin-bottom: 15px;
-            font-family: monospace;
-            min-height: 50px;
-        }
-
-        .calc-buttons {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .calc-btn {
-            padding: 15px;
-            border: none;
-            background: #34495e;
-            color: white;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .calc-btn:hover {
-            background: #4FC3F7;
-            transform: scale(1.05);
-        }
-
-        /* تأثيرات الاحتفال */
         .confetti {
             position: fixed;
             width: 10px;
             height: 10px;
             background: #FFD54F;
-            position: absolute;
             animation: confetti-fall 3s linear forwards;
         }
 
@@ -403,22 +358,13 @@
             }
         }
 
-        /* تصميم متجاوب */
         @media (max-width: 768px) {
-            .content-area {
-                grid-template-columns: 1fr;
-            }
-
-            .slide-title {
-                font-size: 1.8rem;
-            }
-
-            .options-grid {
-                grid-template-columns: 1fr;
-            }
+            .content-area { grid-template-columns: 1fr; }
+            .slide-title { font-size: 1.8rem; }
+            .options-grid { grid-template-columns: 1fr; }
+            .slide { padding: 25px; }
         }
 
-        /* شريحة البداية الخاصة */
         .intro-slide {
             text-align: center;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -450,7 +396,6 @@
             50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 213, 79, 0); }
         }
 
-        /* شرح مرئي */
         .visual-explanation {
             display: flex;
             align-items: center;
@@ -493,24 +438,197 @@
             padding: 0 5px;
             font-weight: 700;
         }
+
+        /* Login Screen */
+        .login-container {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .login-input {
+            width: 300px;
+            max-width: 90%;
+            padding: 18px 25px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-size: 1.4rem;
+            font-family: 'Tajawal', sans-serif;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .login-input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .login-input:focus {
+            border-color: #FFD54F;
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 0 30px rgba(255, 213, 79, 0.3);
+        }
+
+        .login-error {
+            color: #FFD54F;
+            font-size: 1rem;
+            margin-top: 10px;
+            min-height: 25px;
+        }
+
+        /* Dashboard */
+        .dashboard-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
+            margin-top: 20px;
+        }
+
+        .dashboard-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .dashboard-table th:first-child {
+            border-radius: 0 15px 15px 0;
+        }
+
+        .dashboard-table th:last-child {
+            border-radius: 15px 0 0 15px;
+        }
+
+        .dashboard-table td {
+            background: #f8f9fa;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .dashboard-table tr td:first-child {
+            border-radius: 0 12px 12px 0;
+        }
+
+        .dashboard-table tr td:last-child {
+            border-radius: 12px 0 0 12px;
+        }
+
+        .dashboard-table tr:hover td {
+            background: #E3F2FD;
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .rank-1 { background: #FFD54F; color: #5D4037; }
+        .rank-2 { background: #B0BEC5; color: #37474F; }
+        .rank-3 { background: #BCAAA4; color: #3E2723; }
+        .rank-other { background: #E0E0E0; color: #616161; }
+
+        .dashboard-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #667eea;
+            z-index: 100;
+            cursor: pointer;
+            border: none;
+            font-family: 'Tajawal', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .dashboard-btn.visible {
+            display: flex;
+        }
+
+        .dashboard-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .no-data-msg {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .no-data-msg span {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .gems-stars {
+            color: #FFD54F;
+        }
     </style>
 </head>
 <body>
-    <!-- شريط التقدم -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- عداد الجواهر -->
-    <div class="gems-counter">
+    <div class="gems-counter" id="gemsCounter">
         <span>💎</span>
         <span id="gemsCount">0</span>
     </div>
 
+    <div class="student-name-display" id="studentNameDisplay">
+        <span>🎓</span>
+        <span id="studentNameText"></span>
+    </div>
+
+    <button class="dashboard-btn" id="dashboardBtn" onclick="showDashboard()">
+        📊 لوحة النتائج
+    </button>
+
     <div class="presentation-container">
 
+        <!-- شريحة تسجيل الدخول -->
+        <div class="slide login-container active" id="slide0">
+            <div class="character" style="width: 200px; height: 200px; font-size: 5rem; background: linear-gradient(135deg, #FFD54F, #FF8A65);">🎓</div>
+            <h1 class="slide-title" style="color: white; font-size: 3rem;">مغامرة الإحصاء</h1>
+            <p class="slide-subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.3rem; margin-bottom: 40px;">
+                رحلة ممتعة لاكتشاف أسرار الأرقام
+            </p>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 25px; display: inline-block; min-width: 350px;">
+                <p style="font-size: 1.4rem; margin-bottom: 25px;">👋 أهلاً بك! ما اسمك؟</p>
+                <input type="text" id="studentNameInput" class="login-input" placeholder="اكتب اسمك هنا..." maxlength="30" onkeydown="if(event.key==='Enter') startAdventure()">
+                <div class="login-error" id="loginError"></div>
+                <br>
+                <button class="start-btn" onclick="startAdventure()" style="margin-top: 20px;">
+                    ابدأ المغامرة 🚀
+                </button>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 1rem; opacity: 0.7;">الأسئلة عشوائية لكل طالب</p>
+        </div>
+
         <!-- الشريحة 1: الانطلاقة -->
-        <div class="slide intro-slide active" id="slide1">
+        <div class="slide intro-slide" id="slide1">
             <div class="character" style="width: 250px; height: 250px; font-size: 6rem; background: linear-gradient(135deg, #FFD54F, #FF8A65);">🚀</div>
-            <h1 class="slide-title">مغامرة الإحصاء</h1>
+            <h1 class="slide-title" style="color: white;">مرحباً <span id="welcomeName"></span>!</h1>
             <p class="slide-subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.5rem;">
                 رحلة ممتعة لاكتشاف أسرار الأرقام مع دليلك الذكي
             </p>
@@ -522,7 +640,7 @@
                 <p>✨ معرفة <span class="highlight" style="background: #FFD54F;">المدى</span></p>
             </div>
             <br>
-            <button class="start-btn" onclick="nextSlide()">ابدأ المغامرة 🎮</button>
+            <button class="start-btn" onclick="nextSlide()">هيا بنا! 🎮</button>
         </div>
 
         <!-- الشريحة 2: مهمة المنوال -->
@@ -533,7 +651,6 @@
                 <h2 class="slide-title">مهمة المنوال 🎯</h2>
                 <p class="slide-subtitle">ما هو العدد الأكثر تكراراً؟</p>
             </div>
-
             <div class="content-area">
                 <div class="visual-side">
                     <div class="character">🤖</div>
@@ -553,7 +670,6 @@
                         </p>
                         <p class="click-hint" style="color: #4FC3F7; font-size: 0.9rem;">👆 اضغط لرؤية المثال</p>
                     </div>
-
                     <div class="visual-explanation">
                         <div class="step-box">
                             <div style="font-size: 2rem;">🔍</div>
@@ -572,45 +688,27 @@
                     </div>
                 </div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()">التالي ⭐</button>
             </div>
         </div>
 
-        <!-- الشريحة 3: تحدي المنوال -->
+        <!-- الشريحة 3: تحدي المنوال (عشوائي) -->
         <div class="slide" id="slide3">
             <div class="slide-header">
                 <div class="slide-number">2</div>
                 <h2 class="slide-title">تحدي المنوال 🎮</h2>
                 <p class="slide-subtitle">اختبر مهاراتك!</p>
             </div>
-
             <div class="game-container">
                 <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">
                     ما هو المنوال لهذه الأرقام؟
                 </h3>
-                <div class="number-set">
-                    <div class="number-ball">2</div>
-                    <div class="number-ball">5</div>
-                    <div class="number-ball">3</div>
-                    <div class="number-ball">5</div>
-                    <div class="number-ball">1</div>
-                    <div class="number-ball">5</div>
-                    <div class="number-ball">4</div>
-                </div>
-
-                <div class="options-grid">
-                    <button class="option-btn" onclick="checkAnswer(this, false)">1</button>
-                    <button class="option-btn" onclick="checkAnswer(this, false)">3</button>
-                    <button class="option-btn" onclick="checkAnswer(this, true)">5</button>
-                    <button class="option-btn" onclick="checkAnswer(this, false)">4</button>
-                </div>
-
+                <div class="number-set" id="modeNumbers"></div>
+                <div class="options-grid" id="modeOptions"></div>
                 <div id="modeFeedback" style="text-align: center; margin-top: 20px; font-size: 1.2rem; min-height: 40px;"></div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()" id="modeNext" style="display: none;">التالي 🌟</button>
@@ -624,7 +722,6 @@
                 <h2 class="slide-title">مهمة الوسط الحسابي 🧮</h2>
                 <p class="slide-subtitle">متوسط القيم</p>
             </div>
-
             <div class="content-area">
                 <div class="visual-side">
                     <div class="formula-box">
@@ -646,7 +743,6 @@
                             <li>اقسم <span class="highlight">المجموع</span> على <span class="highlight">العدد</span></li>
                         </ol>
                     </div>
-
                     <div style="background: #E8F5E9; padding: 20px; border-radius: 15px; margin-top: 20px; border: 2px solid #4CAF50;">
                         <p><strong>مثال:</strong> 10, 20, 30</p>
                         <p>المجموع = 60</p>
@@ -657,48 +753,30 @@
                     </div>
                 </div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()">التالي 🎯</button>
             </div>
         </div>
 
-        <!-- الشريحة 5: تحدي الوسط الحسابي -->
+        <!-- الشريحة 5: تحدي الوسط الحسابي (عشوائي) -->
         <div class="slide" id="slide5">
             <div class="slide-header">
                 <div class="slide-number">4</div>
-                <h2 class="slide-title">حاسبة الوسط التفاعلية 🧮</h2>
+                <h2 class="slide-title">تحدي الوسط الحسابي 🧮</h2>
                 <p class="slide-subtitle">احسب بنفسك!</p>
             </div>
-
             <div class="game-container" style="max-width: 600px; margin: 0 auto;">
                 <h3 style="text-align: center; margin-bottom: 20px;">
-                    أدخل الأرقام واحسب الوسط:
+                    ما هو الوسط الحسابي لهذه الأرقام؟
                 </h3>
-
-                <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
-                    <input type="number" id="num1" placeholder="الرقم 1" style="width: 100px; padding: 15px; border: 2px solid #4FC3F7; border-radius: 10px; text-align: center; font-size: 1.2rem;">
-                    <input type="number" id="num2" placeholder="الرقم 2" style="width: 100px; padding: 15px; border: 2px solid #4FC3F7; border-radius: 10px; text-align: center; font-size: 1.2rem;">
-                    <input type="number" id="num3" placeholder="الرقم 3" style="width: 100px; padding: 15px; border: 2px solid #4FC3F7; border-radius: 10px; text-align: center; font-size: 1.2rem;">
-                </div>
-
-                <button onclick="calculateMean()" style="display: block; margin: 20px auto; padding: 15px 40px; background: linear-gradient(135deg, #4FC3F7, #29B6F6); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; cursor: pointer; font-family: 'Tajawal';">
-                    احسب الوسط 🚀
-                </button>
-
-                <div id="meanResult" style="text-align: center; font-size: 1.5rem; margin-top: 20px; min-height: 60px;"></div>
-
-                <div style="background: #FFF3E0; padding: 20px; border-radius: 15px; margin-top: 30px;">
-                    <p style="text-align: center; color: #E65100;">
-                        <strong>🎯 تحدي:</strong> جرب الأرقام: 15, 25, 35, 25
-                    </p>
-                </div>
+                <div style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; background: #E8F5E9; padding: 20px; border-radius: 15px;" id="meanQuestion"></div>
+                <div class="options-grid" id="meanOptions"></div>
+                <div id="meanFeedback" style="text-align: center; margin-top: 20px; font-size: 1.2rem; min-height: 40px;"></div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
-                <button class="nav-btn primary" onclick="nextSlide()">التالي 📊</button>
+                <button class="nav-btn primary" onclick="nextSlide()" id="meanNext" style="display: none;">التالي 📊</button>
             </div>
         </div>
 
@@ -709,7 +787,6 @@
                 <h2 class="slide-title">مهمة الوسيط 🎪</h2>
                 <p class="slide-subtitle">الرقم الأوسط بعد الترتيب</p>
             </div>
-
             <div class="content-area">
                 <div class="visual-side">
                     <div class="character" style="background: linear-gradient(135deg, #FF8A65, #FF7043);">🎭</div>
@@ -739,7 +816,6 @@
                     </div>
                 </div>
             </div>
-
             <div style="background: #E3F2FD; padding: 25px; border-radius: 20px; margin-top: 20px;">
                 <h3 style="text-align: center; margin-bottom: 15px; color: #1565C0;">مثال تفاعلي:</h3>
                 <div style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 1.3rem;">
@@ -763,49 +839,27 @@
                     <strong>الوسيط = 5</strong> (الرقم في المنتصف)
                 </p>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()">التالي 🎪</button>
             </div>
         </div>
 
-        <!-- الشريحة 7: تحدي الوسيط -->
+        <!-- الشريحة 7: تحدي الوسيط (عشوائي) -->
         <div class="slide" id="slide7">
             <div class="slide-header">
                 <div class="slide-number">6</div>
                 <h2 class="slide-title">تحدي الوسيط 🎲</h2>
                 <p class="slide-subtitle">رتب واختر!</p>
             </div>
-
             <div class="game-container">
-                <h3 style="text-align: center; margin-bottom: 20px;">
-                    ما هو الوسيط لهذه الأرقام؟
-                </h3>
-                <div style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; background: #E3F2FD; padding: 20px; border-radius: 15px;">
-                    12, 8, 15, 6, 10
-                </div>
-
+                <h3 style="text-align: center; margin-bottom: 20px;">ما هو الوسيط لهذه الأرقام؟</h3>
+                <div style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; background: #E3F2FD; padding: 20px; border-radius: 15px;" id="medianQuestion"></div>
                 <p style="text-align: center; color: #7f8c8d; margin-bottom: 15px;">تلميح: ارتبها أولاً!</p>
-
-                <div class="options-grid">
-                    <button class="option-btn" onclick="checkMedian(this, false)">8</button>
-                    <button class="option-btn" onclick="checkMedian(this, true)">10</button>
-                    <button class="option-btn" onclick="checkMedian(this, false)">12</button>
-                    <button class="option-btn" onclick="checkMedian(this, false)">15</button>
-                </div>
-
+                <div class="options-grid" id="medianOptions"></div>
                 <div id="medianFeedback" style="text-align: center; margin-top: 20px; font-size: 1.2rem; min-height: 40px;"></div>
-
-                <div id="medianExplanation" style="display: none; background: #E8F5E9; padding: 20px; border-radius: 15px; margin-top: 20px;">
-                    <p style="color: #2E7D32;">
-                        <strong>الحل:</strong><br>
-                        الترتيب: 6, 8, <span style="background: #FFD54F; padding: 5px 10px; border-radius: 5px;">10</span>, 12, 15<br>
-                        الوسيط هو <strong>10</strong> (الرقم الثالث في المنتصف)
-                    </p>
-                </div>
+                <div id="medianExplanation" style="display: none; background: #E8F5E9; padding: 20px; border-radius: 15px; margin-top: 20px;"></div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()" id="medianNext" style="display: none;">التالي 🚀</button>
@@ -819,7 +873,6 @@
                 <h2 class="slide-title">مهمة المدى 📏</h2>
                 <p class="slide-subtitle">الفرق بين الأكبر والأصغر</p>
             </div>
-
             <div class="content-area">
                 <div class="visual-side">
                     <div style="position: relative; height: 200px; background: linear-gradient(90deg, #4FC3F7 0%, #81C784 50%, #FFD54F 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
@@ -839,14 +892,12 @@
                             <span style="font-size: 2rem; color: #4FC3F7;">أصغر قيمة</span>
                         </p>
                     </div>
-
                     <div class="concept-card" style="border-color: #81C784;">
                         <h3>💡 لماذا المدى مهم؟</h3>
                         <p>يساعدنا على معرفة <span class="highlight">انتشار البيانات</span> ومدى تباعدها!</p>
                     </div>
                 </div>
             </div>
-
             <div style="background: #FFF8E1; padding: 25px; border-radius: 20px; margin-top: 20px; border: 2px solid #FFD54F;">
                 <h3 style="text-align: center; margin-bottom: 15px; color: #F57F17;">مثال:</h3>
                 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
@@ -865,67 +916,24 @@
                     </div>
                 </div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()">التالي 🎯</button>
             </div>
         </div>
 
-        <!-- الشريحة 9: التحدي النهائي -->
+        <!-- الشريحة 9: التحدي النهائي (عشوائي) -->
         <div class="slide" id="slide9">
             <div class="slide-header">
                 <div class="slide-number">8</div>
                 <h2 class="slide-title">التحدي النهائي 🏆</h2>
                 <p class="slide-subtitle">اختبر كل ما تعلمته!</p>
             </div>
-
             <div class="game-container">
-                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">
-                    البيانات: 4, 8, 6, 8, 2, 8, 10
-                </h3>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                    <div style="background: #E3F2FD; padding: 20px; border-radius: 15px;">
-                        <p style="font-weight: 700; margin-bottom: 10px; color: #1565C0;">1. ما هو المنوال؟</p>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'mode', false)">4</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'mode', true)">8</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'mode', false)">10</button>
-                        </div>
-                    </div>
-
-                    <div style="background: #E8F5E9; padding: 20px; border-radius: 15px;">
-                        <p style="font-weight: 700; margin-bottom: 10px; color: #2E7D32;">2. ما هو الوسط الحسابي؟</p>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'mean', false)">6</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'mean', true)">8</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'mean', false)">10</button>
-                        </div>
-                    </div>
-
-                    <div style="background: #FFF3E0; padding: 20px; border-radius: 15px;">
-                        <p style="font-weight: 700; margin-bottom: 10px; color: #E65100;">3. ما هو الوسيط؟</p>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'median', false)">6</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'median', true)">8</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'median', false)">10</button>
-                        </div>
-                    </div>
-
-                    <div style="background: #F3E5F5; padding: 20px; border-radius: 15px;">
-                        <p style="font-weight: 700; margin-bottom: 10px; color: #7B1FA2;">4. ما هو المدى؟</p>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'range', false)">6</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'range', true)">8</button>
-                            <button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, 'range', false)">10</button>
-                        </div>
-                    </div>
-                </div>
-
+                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;" id="finalDataTitle"></h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;" id="finalQuestions"></div>
                 <div id="finalScore" style="text-align: center; margin-top: 30px; font-size: 1.3rem; min-height: 50px;"></div>
             </div>
-
             <div class="nav-buttons">
                 <button class="nav-btn secondary" onclick="prevSlide()">السابق</button>
                 <button class="nav-btn primary" onclick="nextSlide()" id="finalNext" style="display: none; background: linear-gradient(135deg, #FFD54F, #FF8A65);">
@@ -938,45 +946,47 @@
         <div class="slide" id="slide10">
             <div class="slide-header">
                 <div class="slide-number" style="background: linear-gradient(135deg, #FFD54F, #FF8A65);">⭐</div>
-                <h2 class="slide-title" style="color: #FFD54F;">تهانينا البطل! 🎉</h2>
+                <h2 class="slide-title" style="color: #FFD54F;">تهانينا <span id="certName"></span>! 🎉</h2>
                 <p class="slide-subtitle">أكملت مغامرة الإحصاء بنجاح</p>
             </div>
-
             <div style="text-align: center; padding: 40px;">
                 <div style="font-size: 8rem; margin-bottom: 20px; animation: bounce 1s infinite;">🏆</div>
-
                 <div style="background: linear-gradient(135deg, #FFD54F, #FF8A65); color: white; padding: 30px; border-radius: 20px; margin: 30px auto; max-width: 500px;">
                     <h3 style="font-size: 2rem; margin-bottom: 15px;">شهادة إنجاز</h3>
                     <p style="font-size: 1.3rem;">تم منح هذه الشهادة لـ</p>
-                    <p style="font-size: 1.8rem; font-weight: 900; margin: 15px 0; border-bottom: 3px solid white; display: inline-block; padding: 0 20px;">البطل الصغير</p>
+                    <p id="certNameBig" style="font-size: 1.8rem; font-weight: 900; margin: 15px 0; border-bottom: 3px solid white; display: inline-block; padding: 0 20px;"></p>
                     <p style="font-size: 1.2rem; margin-top: 15px;">لإتقان المقاييس الإحصائية</p>
+                    <p style="font-size: 1.5rem; margin-top: 10px;">💎 <span id="finalGems"></span> جوهرة</p>
                 </div>
-
                 <div style="display: flex; justify-content: center; gap: 30px; margin: 30px 0; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem;">🎯</div>
-                        <p>المنوال</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem;">🧮</div>
-                        <p>الوسط</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem;">🎪</div>
-                        <p>الوسيط</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem;">📏</div>
-                        <p>المدى</p>
-                    </div>
+                    <div style="text-align: center;"><div style="font-size: 3rem;">🎯</div><p>المنوال</p></div>
+                    <div style="text-align: center;"><div style="font-size: 3rem;">🧮</div><p>الوسط</p></div>
+                    <div style="text-align: center;"><div style="font-size: 3rem;">🎪</div><p>الوسيط</p></div>
+                    <div style="text-align: center;"><div style="font-size: 3rem;">📏</div><p>المدى</p></div>
                 </div>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 30px;">
+                    <button onclick="showDashboard()" style="padding: 15px 40px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; cursor: pointer; font-family: 'Tajawal';">
+                        📊 لوحة النتائج
+                    </button>
+                    <button onclick="restartNew()" style="padding: 15px 40px; background: linear-gradient(135deg, #4FC3F7, #29B6F6); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; cursor: pointer; font-family: 'Tajawal';">
+                        طالب جديد 🔄
+                    </button>
+                </div>
+            </div>
+        </div>
 
-                <p style="font-size: 1.3rem; color: #7f8c8d; margin-top: 30px;">
-                    استمر في التعلم! أنت رائع! 🌟
-                </p>
-
-                <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 40px; background: linear-gradient(135deg, #4FC3F7, #29B6F6); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; cursor: pointer; font-family: 'Tajawal';">
-                    إعادة المغامرة 🔄
+        <!-- الشريحة 11: لوحة النتائج (داش بورد) -->
+        <div class="slide" id="slide11">
+            <div class="slide-header">
+                <div class="slide-number" style="background: linear-gradient(135deg, #667eea, #764ba2);">📊</div>
+                <h2 class="slide-title">لوحة النتائج</h2>
+                <p class="slide-subtitle">ترتيب الطلاب من الأول إلى الأخير</p>
+            </div>
+            <div id="dashboardContent" style="padding: 10px;"></div>
+            <div class="nav-buttons">
+                <button class="nav-btn secondary" onclick="goBackFromDashboard()">رجوع</button>
+                <button class="nav-btn primary" onclick="restartNew()" style="background: linear-gradient(135deg, #FF8A65, #FF7043);">
+                    طالب جديد 🎓
                 </button>
             </div>
         </div>
@@ -994,22 +1004,249 @@
     </div>
 
     <script>
-        let currentSlide = 1;
+        // === المتغيرات الأساسية ===
+        let currentSlide = 0;
+        const totalSlides = 11;
         let gems = 0;
+        let studentName = '';
+        let slideBeforeDashboard = 0;
         let finalAnswers = { mode: false, mean: false, median: false, range: false };
 
+        // بيانات الأسئلة العشوائية
+        let modeData = {};
+        let meanData = {};
+        let medianData = {};
+        let finalData = {};
+
+        // === تسجيل الدخول ===
+        function startAdventure() {
+            const input = document.getElementById('studentNameInput');
+            const name = input.value.trim();
+            if (!name) {
+                document.getElementById('loginError').textContent = 'الرجاء كتابة اسمك أولاً!';
+                input.focus();
+                return;
+            }
+            studentName = name;
+            document.getElementById('welcomeName').textContent = name;
+            document.getElementById('studentNameText').textContent = name;
+            document.getElementById('certName').textContent = name;
+            document.getElementById('certNameBig').textContent = name;
+            document.getElementById('gemsCounter').classList.add('visible');
+            document.getElementById('studentNameDisplay').classList.add('visible');
+            document.getElementById('dashboardBtn').classList.add('visible');
+
+            // توليد الأسئلة العشوائية
+            generateAllQuestions();
+
+            currentSlide = 1;
+            showSlide(currentSlide);
+        }
+
+        // === توليد الأسئلة العشوائية ===
+        function randInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function generateModeQuestion() {
+            const modeVal = randInt(2, 9);
+            const count = randInt(3, 4); // عدد تكرار المنوال
+            let nums = [];
+            for (let i = 0; i < count; i++) nums.push(modeVal);
+            // أضف أرقام أخرى مختلفة (كل منها مرة أو مرتين أقل)
+            const others = new Set();
+            while (others.size < 3) {
+                const n = randInt(1, 9);
+                if (n !== modeVal) others.add(n);
+            }
+            const otherArr = [...others];
+            nums.push(otherArr[0]);
+            if (count >= 3) nums.push(otherArr[1]);
+            nums.push(otherArr[2]);
+            // أحياناً أضف تكرار لرقم آخر (أقل من المنوال)
+            if (count >= 4) nums.push(otherArr[0]);
+
+            const display = shuffle(nums);
+            const options = shuffle([modeVal, otherArr[0], otherArr[1], otherArr[2]]);
+
+            modeData = { numbers: display, answer: modeVal, options, count };
+            renderModeQuestion();
+        }
+
+        function renderModeQuestion() {
+            const container = document.getElementById('modeNumbers');
+            container.innerHTML = modeData.numbers.map(n =>
+                '<div class="number-ball">' + n + '</div>'
+            ).join('');
+
+            const optContainer = document.getElementById('modeOptions');
+            optContainer.innerHTML = modeData.options.map(opt =>
+                '<button class="option-btn" onclick="checkMode(this, ' + opt + ')">' + opt + '</button>'
+            ).join('');
+        }
+
+        function generateMeanQuestion() {
+            // نولد 4 أرقام مجموعها يقبل القسمة على 4
+            let nums, mean;
+            do {
+                nums = [randInt(2, 15), randInt(2, 15), randInt(2, 15), randInt(2, 15)];
+                mean = nums.reduce((a, b) => a + b, 0) / 4;
+            } while (mean !== Math.floor(mean));
+
+            mean = Math.floor(mean);
+            const wrongOpts = new Set();
+            while (wrongOpts.size < 3) {
+                const w = mean + randInt(-4, 4);
+                if (w !== mean && w > 0) wrongOpts.add(w);
+            }
+            const options = shuffle([mean, ...[...wrongOpts]]);
+
+            meanData = { numbers: nums, answer: mean, options };
+            renderMeanQuestion();
+        }
+
+        function renderMeanQuestion() {
+            document.getElementById('meanQuestion').textContent = meanData.numbers.join(' , ');
+            const optContainer = document.getElementById('meanOptions');
+            optContainer.innerHTML = meanData.options.map(opt =>
+                '<button class="option-btn" onclick="checkMean(this, ' + opt + ')">' + opt + '</button>'
+            ).join('');
+        }
+
+        function generateMedianQuestion() {
+            // 5 أرقام مختلفة
+            const nums = new Set();
+            while (nums.size < 5) {
+                nums.add(randInt(2, 30));
+            }
+            const numArr = [...nums];
+            const sorted = [...numArr].sort((a, b) => a - b);
+            const median = sorted[2];
+
+            const wrongOpts = new Set();
+            wrongOpts.add(sorted[1]);
+            wrongOpts.add(sorted[3]);
+            if (wrongOpts.size < 3) wrongOpts.add(sorted[0]);
+            const options = shuffle([median, ...[...wrongOpts].slice(0, 3)]);
+
+            medianData = { numbers: numArr, answer: median, sorted, options };
+            renderMedianQuestion();
+        }
+
+        function renderMedianQuestion() {
+            document.getElementById('medianQuestion').textContent = medianData.numbers.join(' , ');
+            const optContainer = document.getElementById('medianOptions');
+            optContainer.innerHTML = medianData.options.map(opt =>
+                '<button class="option-btn" onclick="checkMedian(this, ' + opt + ')">' + opt + '</button>'
+            ).join('');
+        }
+
+        function generateFinalQuestion() {
+            // نولد 7 أرقام: واحد يتكرر 3 مرات (المنوال)
+            const modeVal = randInt(3, 9);
+            let nums = [modeVal, modeVal, modeVal];
+            const usedSet = new Set([modeVal]);
+            while (nums.length < 7) {
+                const n = randInt(1, 12);
+                if (!usedSet.has(n)) {
+                    usedSet.add(n);
+                    nums.push(n);
+                }
+            }
+            nums = shuffle(nums);
+
+            const sorted = [...nums].sort((a, b) => a - b);
+            const median = sorted[3];
+            const sum = nums.reduce((a, b) => a + b, 0);
+            const mean = sum / 7;
+            const range = sorted[6] - sorted[0];
+            const meanRounded = Math.round(mean * 100) / 100;
+
+            // خيارات لكل سؤال
+            function makeOpts(correct) {
+                const opts = new Set([correct]);
+                while (opts.size < 3) {
+                    const w = correct + randInt(-3, 3);
+                    if (w > 0 && w !== correct) opts.add(w);
+                }
+                return shuffle([...opts]);
+            }
+
+            finalData = {
+                numbers: nums,
+                mode: modeVal,
+                mean: meanRounded,
+                median: median,
+                range: range,
+                modeOpts: makeOpts(modeVal),
+                meanOpts: makeOpts(meanRounded),
+                medianOpts: makeOpts(median),
+                rangeOpts: makeOpts(range)
+            };
+            renderFinalQuestion();
+        }
+
+        function renderFinalQuestion() {
+            document.getElementById('finalDataTitle').textContent =
+                'البيانات: ' + finalData.numbers.join(' , ');
+
+            const colors = [
+                { bg: '#E3F2FD', c: '#1565C0', label: '1. ما هو المنوال؟', key: 'mode', opts: finalData.modeOpts },
+                { bg: '#E8F5E9', c: '#2E7D32', label: '2. ما هو الوسط الحسابي؟', key: 'mean', opts: finalData.meanOpts },
+                { bg: '#FFF3E0', c: '#E65100', label: '3. ما هو الوسيط؟', key: 'median', opts: finalData.medianOpts },
+                { bg: '#F3E5F5', c: '#7B1FA2', label: '4. ما هو المدى؟', key: 'range', opts: finalData.rangeOpts }
+            ];
+
+            const container = document.getElementById('finalQuestions');
+            container.innerHTML = colors.map(q =>
+                '<div style="background: ' + q.bg + '; padding: 20px; border-radius: 15px;">' +
+                '<p style="font-weight: 700; margin-bottom: 10px; color: ' + q.c + ';">' + q.label + '</p>' +
+                '<div style="display: flex; gap: 10px; flex-wrap: wrap;">' +
+                q.opts.map(opt =>
+                    '<button class="option-btn" style="padding: 10px 20px; font-size: 1rem;" onclick="checkFinal(this, \'' + q.key + '\', ' + opt + ')">' + opt + '</button>'
+                ).join('') +
+                '</div></div>'
+            ).join('');
+        }
+
+        function generateAllQuestions() {
+            generateModeQuestion();
+            generateMeanQuestion();
+            generateMedianQuestion();
+            generateFinalQuestion();
+            // إعادة تعيين
+            gems = 0;
+            document.getElementById('gemsCount').textContent = '0';
+            finalAnswers = { mode: false, mean: false, median: false, range: false };
+            document.getElementById('modeFeedback').innerHTML = '';
+            document.getElementById('meanFeedback').innerHTML = '';
+            document.getElementById('medianFeedback').innerHTML = '';
+            document.getElementById('medianExplanation').style.display = 'none';
+            document.getElementById('finalScore').innerHTML = '';
+            document.getElementById('modeNext').style.display = 'none';
+            document.getElementById('meanNext').style.display = 'none';
+            document.getElementById('medianNext').style.display = 'none';
+            document.getElementById('finalNext').style.display = 'none';
+        }
+
+        // === التنقل بين الشرائح ===
         function updateProgress() {
-            const progress = (currentSlide / 10) * 100;
+            const progress = (currentSlide / (totalSlides - 1)) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
         }
 
         function showSlide(n) {
             const slides = document.querySelectorAll('.slide');
             slides.forEach(slide => slide.classList.remove('active'));
-
-            if (n > slides.length) currentSlide = 1;
-            if (n < 1) currentSlide = slides.length;
-
             document.getElementById('slide' + currentSlide).classList.add('active');
             updateProgress();
         }
@@ -1018,6 +1255,9 @@
             if (currentSlide < 10) {
                 currentSlide++;
                 showSlide(currentSlide);
+                if (currentSlide === 10) {
+                    saveStudentResult();
+                }
             }
         }
 
@@ -1028,11 +1268,10 @@
             }
         }
 
+        // === الجواهر ===
         function addGems(count) {
             gems += count;
             document.getElementById('gemsCount').textContent = gems;
-
-            // تأثير الجوهرة
             const gem = document.createElement('div');
             gem.textContent = '💎';
             gem.style.position = 'fixed';
@@ -1077,18 +1316,15 @@
             card.style.background = '#E8F5E9';
         }
 
-        function checkAnswer(btn, isCorrect) {
+        // === التحقق من الإجابات ===
+        function checkMode(btn, value) {
             const buttons = btn.parentElement.querySelectorAll('.option-btn');
-            buttons.forEach(b => {
-                b.disabled = true;
-                b.style.cursor = 'default';
-            });
-
             const feedback = document.getElementById('modeFeedback');
 
-            if (isCorrect) {
+            if (value === modeData.answer) {
+                buttons.forEach(b => { b.disabled = true; b.style.cursor = 'default'; });
                 btn.classList.add('correct');
-                feedback.innerHTML = '<span style="color: #4CAF50; font-size: 1.5rem;">🎉 أحسنت! العدد 5 تكرر 3 مرات!</span>';
+                feedback.innerHTML = '<span style="color: #4CAF50; font-size: 1.5rem;">🎉 أحسنت! العدد ' + modeData.answer + ' تكرر ' + modeData.count + ' مرات!</span>';
                 showSuccess();
                 document.getElementById('modeNext').style.display = 'block';
             } else {
@@ -1096,60 +1332,65 @@
                 feedback.innerHTML = '<span style="color: #F44336;">حاول مرة أخرى! تذكر: المنوال هو الأكثر تكراراً</span>';
                 setTimeout(() => {
                     btn.classList.remove('wrong');
-                    buttons.forEach(b => b.disabled = false);
                     feedback.innerHTML = '';
                 }, 1500);
             }
         }
 
-        function calculateMean() {
-            const n1 = parseFloat(document.getElementById('num1').value) || 0;
-            const n2 = parseFloat(document.getElementById('num2').value) || 0;
-            const n3 = parseFloat(document.getElementById('num3').value) || 0;
+        function checkMean(btn, value) {
+            const buttons = btn.parentElement.querySelectorAll('.option-btn');
+            const feedback = document.getElementById('meanFeedback');
 
-            if (n1 === 0 && n2 === 0 && n3 === 0) {
-                document.getElementById('meanResult').innerHTML = '<span style="color: #F44336;">أدخل أرقاماً أولاً!</span>';
-                return;
+            if (value === meanData.answer) {
+                buttons.forEach(b => { b.disabled = true; b.style.cursor = 'default'; });
+                btn.classList.add('correct');
+                const sum = meanData.numbers.reduce((a, b) => a + b, 0);
+                feedback.innerHTML = '<span style="color: #4CAF50; font-size: 1.3rem;">🎉 ممتاز! المجموع = ' + sum + ' ÷ ' + meanData.numbers.length + ' = ' + meanData.answer + '</span>';
+                showSuccess();
+                document.getElementById('meanNext').style.display = 'block';
+            } else {
+                btn.classList.add('wrong');
+                feedback.innerHTML = '<span style="color: #F44336;">ليس صحيحاً. اجمع الأرقام ثم اقسم على عددها!</span>';
+                setTimeout(() => {
+                    btn.classList.remove('wrong');
+                    feedback.innerHTML = '';
+                }, 1500);
             }
-
-            const sum = n1 + n2 + n3;
-            const count = (n1 !== 0 ? 1 : 0) + (n2 !== 0 ? 1 : 0) + (n3 !== 0 ? 1 : 0);
-            const mean = (sum / count).toFixed(2);
-
-            document.getElementById('meanResult').innerHTML = `
-                <div style="background: #E8F5E9; padding: 20px; border-radius: 15px; animation: correctPulse 0.5s;">
-                    <p>المجموع: ${sum}</p>
-                    <p>العدد: ${count}</p>
-                    <p style="font-size: 2rem; color: #4CAF50; margin-top: 10px;">
-                        <strong>الوسط = ${mean}</strong> ✓
-                    </p>
-                </div>
-            `;
-            addGems(1);
         }
 
-        function checkMedian(btn, isCorrect) {
+        function checkMedian(btn, value) {
             const buttons = btn.parentElement.querySelectorAll('.option-btn');
-            buttons.forEach(b => b.disabled = true);
-
             const feedback = document.getElementById('medianFeedback');
             const explanation = document.getElementById('medianExplanation');
 
-            if (isCorrect) {
+            if (value === medianData.answer) {
+                buttons.forEach(b => { b.disabled = true; b.style.cursor = 'default'; });
                 btn.classList.add('correct');
-                feedback.innerHTML = '<span style="color: #4CAF50; font-size: 1.5rem;">🎉 ممتاز! الوسيط هو 10!</span>';
+                feedback.innerHTML = '<span style="color: #4CAF50; font-size: 1.5rem;">🎉 ممتاز! الوسيط هو ' + medianData.answer + '!</span>';
                 explanation.style.display = 'block';
+                explanation.innerHTML = '<p style="color: #2E7D32;"><strong>الحل:</strong><br>الترتيب: ' +
+                    medianData.sorted.map((n, i) =>
+                        i === 2 ? '<span style="background: #FFD54F; padding: 5px 10px; border-radius: 5px;">' + n + '</span>' : n
+                    ).join(' , ') +
+                    '<br>الوسيط هو <strong>' + medianData.answer + '</strong> (الرقم الثالث في المنتصف)</p>';
                 showSuccess();
                 document.getElementById('medianNext').style.display = 'block';
             } else {
                 btn.classList.add('wrong');
                 feedback.innerHTML = '<span style="color: #F44336;">ليس صحيحاً. تذكر: ارتب الأرقام أولاً!</span>';
+                setTimeout(() => {
+                    btn.classList.remove('wrong');
+                    feedback.innerHTML = '';
+                }, 1500);
             }
         }
 
-        function checkFinal(btn, type, isCorrect) {
+        function checkFinal(btn, type, value) {
             const parent = btn.parentElement;
             const buttons = parent.querySelectorAll('.option-btn');
+            const correct = finalData[type];
+            const isCorrect = value === correct;
+
             buttons.forEach(b => {
                 b.disabled = true;
                 if (b === btn) {
@@ -1160,8 +1401,6 @@
             if (isCorrect) {
                 finalAnswers[type] = true;
                 addGems(1);
-
-                // التحقق من إكمال جميع الإجابات
                 if (Object.values(finalAnswers).every(v => v === true)) {
                     document.getElementById('finalScore').innerHTML =
                         '<span style="color: #4CAF50; font-size: 1.8rem;">🎉🎉🎉 أحسنت! أجبت على كل الأسئلة بشكل صحيح!</span>';
@@ -1171,14 +1410,121 @@
             }
         }
 
+        // === حفظ النتائج ===
+        function saveStudentResult() {
+            document.getElementById('finalGems').textContent = gems;
+            const results = JSON.parse(localStorage.getItem('statsAdventureResults') || '[]');
+            results.push({
+                name: studentName,
+                gems: gems,
+                correctFinal: Object.values(finalAnswers).filter(v => v).length,
+                timestamp: new Date().toISOString(),
+                date: new Date().toLocaleDateString('ar-EG')
+            });
+            localStorage.setItem('statsAdventureResults', JSON.stringify(results));
+        }
+
+        // === لوحة النتائج ===
+        function showDashboard() {
+            slideBeforeDashboard = currentSlide;
+            currentSlide = 11;
+            renderDashboard();
+            showSlide(currentSlide);
+        }
+
+        function goBackFromDashboard() {
+            currentSlide = slideBeforeDashboard || 10;
+            showSlide(currentSlide);
+        }
+
+        function renderDashboard() {
+            const results = JSON.parse(localStorage.getItem('statsAdventureResults') || '[]');
+            const container = document.getElementById('dashboardContent');
+
+            if (results.length === 0) {
+                container.innerHTML = '<div class="no-data-msg"><span>📭</span><p style="font-size: 1.3rem;">لا توجد نتائج بعد</p><p>كن أول من يكمل المغامرة!</p></div>';
+                return;
+            }
+
+            // ترتيب حسب الجواهر (الأعلى أولاً) ثم الأحدث
+            const sorted = [...results].sort((a, b) => {
+                if (b.gems !== a.gems) return b.gems - a.gems;
+                return new Date(b.timestamp) - new Date(a.timestamp);
+            });
+
+            let html = '<div style="text-align: center; margin-bottom: 15px; color: #667eea; font-weight: 700;">' +
+                'إجمالي المشاركين: ' + results.length + ' طالب</div>';
+
+            html += '<table class="dashboard-table"><thead><tr>' +
+                '<th>الترتيب</th><th>اسم الطالب</th><th>الجواهر 💎</th><th>التحدي النهائي</th><th>التاريخ</th>' +
+                '</tr></thead><tbody>';
+
+            sorted.forEach((r, i) => {
+                const rank = i + 1;
+                let rankClass = 'rank-other';
+                let medal = '';
+                if (rank === 1) { rankClass = 'rank-1'; medal = '🥇'; }
+                else if (rank === 2) { rankClass = 'rank-2'; medal = '🥈'; }
+                else if (rank === 3) { rankClass = 'rank-3'; medal = '🥉'; }
+
+                const stars = '⭐'.repeat(r.correctFinal || 0) + '☆'.repeat(4 - (r.correctFinal || 0));
+
+                html += '<tr>' +
+                    '<td><span class="rank-badge ' + rankClass + '">' + (medal || rank) + '</span></td>' +
+                    '<td style="font-weight: 700;">' + escapeHtml(r.name) + '</td>' +
+                    '<td class="gems-stars">' + r.gems + ' 💎</td>' +
+                    '<td>' + stars + ' (' + (r.correctFinal || 0) + '/4)</td>' +
+                    '<td style="font-size: 0.9rem; color: #999;">' + (r.date || '') + '</td>' +
+                    '</tr>';
+            });
+
+            html += '</tbody></table>';
+
+            // زر مسح البيانات
+            html += '<div style="text-align: center; margin-top: 25px;">' +
+                '<button onclick="clearResults()" style="padding: 8px 20px; background: #FFCDD2; color: #C62828; border: 2px solid #EF9A9A; border-radius: 10px; cursor: pointer; font-family: Tajawal; font-size: 0.9rem;">مسح جميع النتائج</button>' +
+                '</div>';
+
+            container.innerHTML = html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function clearResults() {
+            if (confirm('هل أنت متأكد من مسح جميع النتائج؟')) {
+                localStorage.removeItem('statsAdventureResults');
+                renderDashboard();
+            }
+        }
+
+        function restartNew() {
+            // إعادة للبداية لطالب جديد
+            currentSlide = 0;
+            studentName = '';
+            gems = 0;
+            document.getElementById('gemsCount').textContent = '0';
+            document.getElementById('gemsCounter').classList.remove('visible');
+            document.getElementById('studentNameDisplay').classList.remove('visible');
+            document.getElementById('dashboardBtn').classList.remove('visible');
+            document.getElementById('studentNameInput').value = '';
+            document.getElementById('loginError').textContent = '';
+            showSlide(0);
+        }
+
         // اختصارات لوحة المفاتيح
         document.addEventListener('keydown', (e) => {
+            if (currentSlide === 0) return;
             if (e.key === 'ArrowRight') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
         });
 
         // تهيئة أولية
         updateProgress();
+        document.getElementById('studentNameInput').focus();
     </script>
 </body>
 </html>
